@@ -22,7 +22,7 @@ const config: runtime.GetPrismaClientConfig = {
       "value": "prisma-client"
     },
     "output": {
-      "value": "C:\\Users\\nknig\\_varius\\_vx\\vx-home-v2\\apps\\server\\prisma\\generated",
+      "value": "C:\\Users\\nknig\\_varius\\_vx\\vx3\\apps\\server\\prisma\\generated",
       "fromEnvVar": null
     },
     "config": {
@@ -37,7 +37,7 @@ const config: runtime.GetPrismaClientConfig = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\nknig\\_varius\\_vx\\vx-home-v2\\apps\\server\\prisma\\schema\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\nknig\\_varius\\_vx\\vx3\\apps\\server\\prisma\\schema\\schema.prisma",
     "isCustomOutput": true
   },
   "relativePath": "../schema",
@@ -47,6 +47,7 @@ const config: runtime.GetPrismaClientConfig = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
