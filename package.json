@@ -1,16 +1,19 @@
 {
 	"name": "vx3",
 	"private": true,
-	"version": "0.1.7",
+	"version": "0.0.17",
 	"workspaces": [
 		"apps/*",
 		"packages/*"
 	],
 	"scripts": {
 		"dev": "turbo dev",
+		"sdk:server": "turbo -F vx3-sdk dev",
+		"sdk:build": "turbo -F vx3-sdk build",
+		"sdk:start": "turbo -F vx3-sdk dev:serve",
+		"system": "turbo run dev --filter=system",
 		"build": "turbo build",
 		"check-types": "turbo check-types",
-		"dev:native": "turbo -F native dev",
 		"dev:web": "turbo -F web dev",
 		"dev:server": "turbo -F server dev",
 		"db:push": "turbo -F server db:push",

@@ -5,7 +5,7 @@ import { getRpcUrl } from '../core/contract';
 
 const rpc = getRpcUrl();
 const bn = getBlockNumber(rpc);
-const exampleaddress = "0x7C1E6Bd7B62F65489Fd4886048fdDf9883aA24F5"; // Example address
+const exampleaddress = ""; // Example address
 const exbalance = getBalance(rpc, exampleaddress);
 
 // Helper functions to parse command-line arguments
@@ -78,7 +78,7 @@ function localWebViewBuilder({ blocknum, balance }) {
             <h2>Code example</h2>
             <code>
                 <pre>
-                import xnv from '@nknighta/xnv';
+                import xnv from '@nknighta/vx3-sdk';
                 export const xnv = new xnv.node({});
                 const bn = xnv.blocknum();
             bn.then(
