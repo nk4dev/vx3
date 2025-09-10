@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import UserMenu from "./user-menu";
+import { WalletButton } from "./wallet-button";
 
 export default function Header() {
 	const links = [
@@ -23,6 +24,7 @@ export default function Header() {
 					})}
 				</nav>
 				<div className="flex items-center gap-2">
+					<WalletButton />
 					<ModeToggle />
 					<UserMenu />
 				</div>

@@ -44,7 +44,7 @@ Metamask or other Web3 Wallet
 ### Create App (Web)
 
 #### 1. Dashboard on Web
-https://vx.varius.technology/create/project
+https://dash.varius.technology/create/project
 
 #### 2. Sign In with CLI
 ```bash
