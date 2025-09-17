@@ -1,5 +1,7 @@
+import pjson from '../../package.json';
+
 // api endpoint for global use
-export const GLOBAL_API_URL="https://api.varius.technology";
+export const GLOBAL_API_URL=process.env.API_SERVER || 'https://api.varius.technology/';
 
 /*
 api endpoint
@@ -14,3 +16,5 @@ export const API_URLS = {
     tx: `${GLOBAL_API_URL}/tx`,
     txs: `${GLOBAL_API_URL}/txs`,
 };
+
+export const VERSION = pjson.version;
