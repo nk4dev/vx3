@@ -1,6 +1,4 @@
 import { init } from './pjmake';
-import shellhaldler from './input';
-import localServer from '../server/dev';
 //import { rpc } from '../core/rpc/command';
 import { SDK_VERSION } from '../config';
 
@@ -9,7 +7,7 @@ const loadversion = SDK_VERSION
 const args = process.argv.slice(2);
 // epcmager.main();
 
-export default async function VX() {
+export default async function VXCLI() {
   if (args.length === 0) {
     help();
   }
@@ -21,27 +19,16 @@ export default async function VX() {
       case 'help':
         help();
         break;
-      case 'create':
-        shellhaldler();
-        return;
       case 'serve':
-        localServer();
+//        localServer();
         return;
-      //case 'rpc':
-        //rpc();
-        //return;
       case '--version':
         console.log(`XNV version: ${loadversion}`);
         process.exit(0);
       case '-v':
         console.log(`XNV version: ${loadversion}`);
         process.exit(0);
-      case 'check':
-        break;
-      case 'dash':
-        console.log('🚀🚀🚀🚀\n');
-        console.log('build dashboard now. stay tuned!');
-        break;
+      
       default:
         console.error(`😑 < Unknown command: ${args[0]}`);
         help();
@@ -84,7 +71,7 @@ function help() {
     }
   ]
 
-  console.log(`\n🚀 XNV v${SDK_VERSION} ${stage}`);
+  console.log(`\n🚀 VX v${SDK_VERSION} ${stage}`);
   console.log('Available commands:');
   commandlist.forEach(cmd => {
     console.log(`  ${cmd.command.padEnd(10)} - ${cmd.description}`);
