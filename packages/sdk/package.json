@@ -1,5 +1,5 @@
 {
-  "name": "vx3-sdk",
+  "name": "@nk4dev/vx3",
   "version": "0.0.15",
   "description": "A CLI tool for smart contracts",
   "main": "dist/index.js",

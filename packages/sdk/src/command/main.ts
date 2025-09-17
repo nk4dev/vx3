@@ -1,7 +1,7 @@
 import { init } from './pjmake';
 import shellhaldler from './input';
 import localServer from '../server/dev';
-import { rpc } from '../core/rpc/command';
+//import { rpc } from '../core/rpc/command';
 import { SDK_VERSION } from '../config';
 
 const loadversion = SDK_VERSION
@@ -14,7 +14,6 @@ export default async function VX() {
     help();
   }
   try {
-
     switch (args[0]) {
       case 'init':
         init();
@@ -28,9 +27,9 @@ export default async function VX() {
       case 'serve':
         localServer();
         return;
-      case 'rpc':
-        rpc();
-        return;
+      //case 'rpc':
+        //rpc();
+        //return;
       case '--version':
         console.log(`XNV version: ${loadversion}`);
         process.exit(0);
