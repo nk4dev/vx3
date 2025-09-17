@@ -5,7 +5,7 @@ import { getRpcUrl } from '../core/contract';
 
 const rpc = getRpcUrl();
 const bn = getBlockNumber(rpc);
-const exampleaddress = ""; // Example address
+const exampleaddress = "0x0000000000000000000000000000000000000000"; // Example address (null address)
 const exbalance = getBalance(rpc, exampleaddress);
 
 // Helper functions to parse command-line arguments
@@ -133,8 +133,9 @@ export default function localServer(options?: Partial<ServerOptions>) {
                     balance = result.toString();
                     console.log(`Balance: ${balance}`);
                     return getBlockNumber(rpc);
-                }).catch(() => {
-                    console.error('Error fetching balance');
+                }).catch((error) => {
+                    console.error('Error fetching balance:', error.message);
+                    balance = 'Error';
                 });
                 bn.then(
                     (blockNumber) => {

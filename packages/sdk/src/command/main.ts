@@ -1,6 +1,7 @@
 import { init } from './pjmake';
 //import { rpc } from '../core/rpc/command';
 import { SDK_VERSION } from '../config';
+import localServer from '../server/dev';
 
 const loadversion = SDK_VERSION
 
@@ -20,13 +21,13 @@ export default async function VXCLI() {
         help();
         break;
       case 'serve':
-//        localServer();
+        localServer();
         return;
       case '--version':
-        console.log(`XNV version: ${loadversion}`);
+        console.log(`VX version: ${loadversion}`);
         process.exit(0);
       case '-v':
-        console.log(`XNV version: ${loadversion}`);
+        console.log(`VX version: ${loadversion}`);
         process.exit(0);
       
       default:
