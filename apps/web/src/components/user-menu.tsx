@@ -1,3 +1,4 @@
+"use client";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -9,6 +10,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
+
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -20,13 +22,13 @@ export default function UserMenu() {
 		return <Skeleton className="h-9 w-24" />;
 	}
 
-	if (!session) {
-		return (
-			<Button variant="outline" asChild>
-				<Link href="/login">Sign In</Link>
-			</Button>
-		);
-	}
+       if (!session) {
+	       return (
+		       <Button variant="outline" asChild>
+			       <Link href="/login">Sign In</Link>
+		       </Button>
+	       );
+       }
 
 	return (
 		<DropdownMenu>
