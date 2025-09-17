@@ -1,12 +1,7 @@
 // local development server for vx-sdk
 import { createServer } from 'http';
 import { getBlockNumber, getBalance } from '../core/data';
-import { getRpcUrl } from '../core/contract';
-
-const rpc = getRpcUrl();
-const bn = getBlockNumber(rpc);
-const exampleaddress = "0x0000000000000000000000000000000000000000"; // Example address (null address)
-const exbalance = getBalance(rpc, exampleaddress);
+import { getRpcUrl, getRpcUrlWithPath } from '../core/contract';
 
 // Helper functions to parse command-line arguments
 function getArgValue(args: string[], flag: string): string | undefined {
@@ -34,10 +29,12 @@ interface ServerOptions {
     env?: string;
     debug?: boolean;
     displaylogs?: boolean;
+    configPath?: string;
 }
 
 
 function localWebViewBuilder({ blocknum, balance }) {
+    const exampleaddress = "0x0000000000000000000000000000000000000000"; // Example address (null address)
     // This function can be used to build a local web view with the provided block number
     return `<html>
         <head>
@@ -98,6 +95,12 @@ export default function localServer(options?: Partial<ServerOptions>) {
     // Extract options from command line arguments or use provided options
     const host = getArgValue(args, '--host') || options?.host || '127.0.0.1';
     const port = getArgValue(args, '--port') || options?.port || '3000';
+    
+    // Initialize RPC configuration with custom path if provided
+    const rpc = options?.configPath ? getRpcUrlWithPath(options.configPath) : getRpcUrl();
+    const bn = getBlockNumber(rpc);
+    const exampleaddress = "0x0000000000000000000000000000000000000000"; // Example address (null address)
+    const exbalance = getBalance(rpc, exampleaddress);
 
     // Parse chains if provided
     const chainsArg = getArgValue(args, '--chains');

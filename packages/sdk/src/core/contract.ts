@@ -14,13 +14,23 @@ function intstance(configPath: string) {
 }
 
 export function getRpcUrl() {
-  const configPath = 'vx.config.json';
-  const config = load_rpc_config(configPath);
-  if (!config) {
-    console.error("No configuration found. Please run 'vx rpc init' to create a configuration.");
+  const config = load_rpc_config(null);
+  try {
+    return `${config.protocol}://${config.host}:${config.port}`;
+  } catch (error) {
+    console.error(`Error reading vx.config.json: ${error.message}`);
     process.exit(1);
   }
-  return `${config.protocol}://${config.host}:${config.port}`;
+}
+
+export function getRpcUrlWithPath(configPath?: string) {
+  const config = load_rpc_config(configPath || null);
+  try {
+    return `${config.protocol}://${config.host}:${config.port}`;
+  } catch (error) {
+    console.error(`Error reading vx.config.json: ${error.message}`);
+    process.exit(1);
+  }
 }
 
 export default intstance;
