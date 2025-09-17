@@ -71,6 +71,11 @@ Port Number
 npx vx3 server --debug --port <port-number>
 ```
 
+### Specify Path to vx.config.json
+```bash
+npx vx3 serve -p "../vx.config.json"
+```
+
 ## Website ScreenShot
 ![alt text](assets/image.png)
 
