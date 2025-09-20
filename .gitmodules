@@ -1,3 +1,6 @@
 [submodule "vx"]
 	path = vx
 	url = https://github.com/nk4dev/vx
+[submodule "vx-core"]
+	path = vx-core
+	url = https://github.com/nk4dev/vx-core
