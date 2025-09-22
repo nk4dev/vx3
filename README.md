@@ -5,6 +5,8 @@ The Web3 SDK for Payment, NFT, and more.
  [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Packages
+sdk package is in [package/vx](https://github.com/nk4dev/vx/tree/52880bca70c6969a97bfdbd58618a27019e16a81)
+
 - package/vx3: The core package of vx3
 - apps/web
 - apps/server
@@ -19,14 +21,6 @@ The Web3 SDK for Payment, NFT, and more.
 - Simple API
 </strong>
 
-```javascript
-import { VX3 } from 'vx3';
-
-const vx3 = new VX3({
-  wallet: "",
-});
-
-```
 
 ## Use Cases
 - Payment
@@ -75,12 +69,46 @@ npx vx3 server --debug --port <port-number>
 ```bash
 npx vx3 serve -p "../vx.config.json"
 ```
+## Send
 
-## Website ScreenShot
-![alt text](assets/image.png)
+- for javascript
+```javascript
+import { vx } from "vx3";
+vx.send({
+  to: "0x1234...abcd",
+  amount: "0.01",
+  currency: "ETH",
+  from: "0x5678...efgh", // optional
+  sendSignature: true, // optional
+});
+```
+- for React
+```jsx
+import { vx } from "vx3";
 
-## Contributing
+export default function App() {
+  const handleSend = async () => {
+    try {
+      const txHash = await vx.send({
+        to: "0x1234...abcd",
+        amount: "0.01",
+        currency: "ETH",
+        from: "0x5678...efgh", // optional
+        sendSignature: true, // optional
+      });
+      console.log("Transaction Hash:", txHash);
+    } catch (error) {
+      console.error("Error sending transaction:", error);
+    }
+  };
 
+  return (
+    <div>
+      <button onClick={handleSend}>Send ETH</button>
+    </div>
+  );
+}
+```
 ## License
 Apache-2.0 License
 
