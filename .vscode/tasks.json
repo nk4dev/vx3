@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run vx tests",
+			"type": "shell",
+			"command": "npm run -s test --workspace vx",
+			"isBackground": false,
+			"problemMatcher": [
+				"$eslint-compact"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run vx tests",
+			"type": "shell",
+			"command": "npm run -s test --workspace vx",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

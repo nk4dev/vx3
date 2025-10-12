@@ -1,19 +1,18 @@
 {
-	"name": "vx3",
+	"name": "@vx/vx3",
 	"private": true,
 	"version": "0.0.18",
 	"workspaces": [
 		"apps/*",
-		"packages/*"
+		"packages/*",
+		"vx"
 	],
 	"scripts": {
 		"dev": "turbo dev",
-		"sdk:server": "turbo -F vx3-sdk dev",
-		"sdk:build": "turbo -F vx3-sdk build",
-		"sdk:start": "turbo -F vx3-sdk dev:serve",
 		"system": "turbo run dev --filter=system",
 		"build": "turbo build",
 		"check-types": "turbo check-types",
+		"dev:sdk": "turbo -F \"@vx/sdk\" dev",
 		"dev:web": "turbo -F web dev",
 		"dev:server": "turbo -F server dev",
 		"db:push": "turbo -F server db:push",
