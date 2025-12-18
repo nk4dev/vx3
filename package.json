@@ -8,6 +8,7 @@
 		"vx"
 	],
 	"scripts": {
+		"website": "serve ./website/",
 		"dev": "turbo dev",
 		"system": "turbo run dev --filter=system",
 		"build": "turbo build",
