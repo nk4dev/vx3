@@ -1,25 +1,102 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>VX3 | VARIUS | nk4dev</title>
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VX3 — Web3 Development Toolkit</title>
+    <link rel="stylesheet" href="index.css" />
+    <meta property="og:title" content="VX3 — Web3 Development Toolkit" />
+    <meta property="og:site_name" content="VX3 | nknighta.me projects" />
+    <meta property="og:description" content="Web3 SDK for Payment, NFT, Multi-Chain and more." />
+    <meta property="og:url" content="https://nknighta.me/vx" />
+    <link rel="icon" href="https://nknighta.me/assets/img/varius.ico" />
+    <meta name="theme-color" content="#1a0533" />
+    <meta property="og:image" content="https://ogp-img-gen.vercel.app/api/img-gen?text=VX+SDK&host=nknight.me" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@nk4dev" />
+    <meta name="twitter:creator" content="@nk4dev" />
+    <meta name="twitter:card" content="summary" />
 </head>
 
-<body class="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-    <h1 class="text-6xl font-bold ">VX3</h1>
-    <a href="https://nknighta.me/vx" class="underline">
-        Docs
-    </a>
-</body>
+<body class="docs-body">
+    <div class="page-content">
+        <canvas id="bg3d" aria-hidden="true"></canvas>
 
-<style>
-    ::selection {
-        background: #fff;
-        color: #000;
-    }
-</style>
+        <!-- Header -->
+        <header class="top-bar">
+            <a href="/vx/" class="brand-link">VX3</a>
+            <nav class="header-nav">
+                <a href="features.html">Features</a>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="cli.html">CLI</a>
+                <a href="https://nknighta.me/vx/">SDK</a>
+                <a href="packages.html">Packages</a>
+                <a href="https://github.com/nk4dev/vx3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <p class="hero-version">v0.0.18</p>
+            <h1 class="hero-title">VX3</h1>
+            <p class="hero-subtitle">Web3 Development Toolkit for Payment, NFT, and more</p>
+            <p class="hero-desc">Connect to multiple chains, manage wallets, deploy smart contracts, and send
+                payments — all from a single CLI & SDK.</p>
+            <div class="hero-actions">
+                <a href="quickstart.html" class="btn-primary">Get Started</a>
+                <a href="https://github.com/nk4dev/vx3" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.93 3.19 9.11 7.61 10.58.56.1.76-.24.76-.53 0-.26-.01-.95-.01-1.86-3.09.67-3.74-1.49-3.74-1.49-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.1.08 1.67 1.13 1.67 1.13.97 1.66 2.55 1.18 3.17.9.1-.71.38-1.18.69-1.45-2.47-.28-5.07-1.24-5.07-5.52 0-1.22.43-2.22 1.13-3.01-.11-.28-.49-1.41.11-2.95 0 0 .92-.29 3.02 1.15a10.46 10.46 0 0 1 2.75-.37c.93 0 1.87.12 2.75.37 2.09-1.44 3.01-1.15 3.01-1.15.61 1.54.23 2.67.12 2.95.7.79 1.13 1.79 1.13 3.01 0 4.29-2.61 5.24-5.09 5.52.39.34.73 1.02.73 2.06 0 1.49-.01 2.69-.01 3.05 0 .29.2.64.77.53C19.06 20.86 22.25 16.68 22.25 11.75 22.25 5.48 17.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="hero-badges">
+                <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"
+                    alt="TypeScript" />
+                <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white"
+                    alt="Ethereum" />
+                <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square" alt="Apache-2.0" />
+            </div>
+        </section>
+
+        <!-- Highlight cards linking to sub-pages -->
+        <section class="section">
+            <div class="features-grid">
+                <a href="features.html" class="feature-card card-link">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Features</h3>
+                    <p>Multi-chain, payment, templates, Hardhat — everything you need for Web3.</p>
+                </a>
+                <a href="quickstart.html" class="feature-card card-link">
+                    <div class="feature-icon">�</div>
+                    <h3>Quick Start</h3>
+                    <p>Install, create a project, and start developing in under a minute.</p>
+                </a>
+                <a href="cli.html" class="feature-card card-link">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>CLI Reference</h3>
+                    <p>All available <code>vx3</code> commands at a glance.</p>
+                </a>
+                <a href="sdk.html" class="feature-card card-link">
+                    <div class="feature-icon">📦</div>
+                    <h3>SDK API</h3>
+                    <p>Use VX3 programmatically with TypeScript, ESM, or CommonJS.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p class="footer-line">&copy; 2025 VX3 — Apache-2.0 License</p>
+            <p class="footer-line">Created by <a href="https://nknighta.me" target="_blank"
+                    rel="noopener noreferrer">nknighta</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
 
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CLI Reference — VX3 Docs</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="https://nknighta.me/assets/img/varius.ico" />
+</head>
+
+<body class="docs-body">
+    <div class="page-content">
+        <canvas id="bg3d" aria-hidden="true"></canvas>
+
+        <header class="top-bar">
+            <a href="/vx/" class="brand-link">VX3</a>
+            <nav class="header-nav">
+                <a href="features.html">Features</a>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="cli.html" class="active">CLI</a>
+                <a href="https://nknighta.me/vx/">SDK</a>
+                <a href="packages.html">Packages</a>
+                <a href="https://github.com/nk4dev/vx3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="section page-section">
+            <h1 class="page-title">CLI Reference</h1>
+            <p class="page-lead">All commands available via the <code>vx3</code> CLI.</p>
+
+            <div class="cli-table-wrap">
+                <table class="cli-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>vx3 create &lt;name&gt;</code></td>
+                            <td>Scaffold a new Web3 project from the built-in template. Copies Solidity samples,
+                                configs, and generates <code>package.json</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>vx3 serve --debug</code></td>
+                            <td>Start a local development server. The <code>--debug</code> flag enables a
+                                TailwindCSS-powered dashboard at <code>/debug</code> showing block number and API
+                                links.</td>
+                        </tr>
+                        <tr>
+                            <td><code>vx3 gas</code></td>
+                            <td>Check gas fees on the connected chain. Outputs gasPrice, maxFeePerGas, and
+                                maxPriorityFeePerGas in both wei and gwei.</td>
+                        </tr>
+                        <tr>
+                            <td><code>vx3 rpc init</code></td>
+                            <td>Generate an RPC configuration template (<code>vx.config.json</code>). Default:
+                                <code>[{"host":"localhost","port":8575,"protocol":"http"}]</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>vx3 setup hardhat</code></td>
+                            <td>Scaffold Hardhat configuration files into the current project for compiling, testing,
+                                and deploying smart contracts.</td>
+                        </tr>
+                        <tr>
+                            <td><code>vx3 pay &lt;to&gt; &lt;amount&gt;</code></td>
+                            <td>Send an ETH payment. Uses <code>$PRIVATE_KEY</code> env var. Optional
+                                <code>--rpc</code> flag to specify endpoint.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h2>Gas Command Output Example</h2>
+                <pre><code>Connecting to RPC: http://localhost:8545
+Gas fee data:
+  gasPrice (wei): 20000000000
+  gasPrice (gwei): 20
+  maxFeePerGas (wei): 2532616788
+  maxFeePerGas (gwei): 2.532616788
+  maxPriorityFeePerGas (wei): 1000000000
+  maxPriorityFeePerGas (gwei): 1</code></pre>
+            </div>
+
+            <div class="subsection">
+                <h2>RPC Configuration</h2>
+                <p>The <code>vx3 rpc init</code> command generates a <code>vx.config.json</code> file:</p>
+                <pre><code>[
+  { "host": "localhost", "port": 8575, "protocol": "http" }
+]</code></pre>
+                <p class="step-note">The loader uses the first object in the array. A single-object format may be
+                    standardized in a future release.</p>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-line">&copy; 2025 VX3 — Apache-2.0 License</p>
+            <p class="footer-line">Created by <a href="https://nknighta.me" target="_blank"
+                    rel="noopener noreferrer">nknighta</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

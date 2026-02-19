@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quick Start — VX3 Docs</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="https://nknighta.me/assets/img/varius.ico" />
+</head>
+
+<body class="docs-body">
+    <div class="page-content">
+        <canvas id="bg3d" aria-hidden="true"></canvas>
+
+        <header class="top-bar">
+            <a href="/vx/" class="brand-link">VX3</a>
+            <nav class="header-nav">
+                <a href="features.html">Features</a>
+                <a href="quickstart.html" class="active">Quick Start</a>
+                <a href="cli.html">CLI</a>
+                <a href="https://nknighta.me/vx/">SDK</a>
+                <a href="packages.html">Packages</a>
+                <a href="https://github.com/nk4dev/vx3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="section page-section">
+            <h1 class="page-title">Quick Start</h1>
+            <p class="page-lead">Get up and running with VX3 in under a minute.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <div class="step-content">
+                        <h3>Install the SDK</h3>
+                        <pre><code>npm i @nk4dev/vx
+# or install globally
+npm i -g @nk4dev/vx</code></pre>
+                        <p class="step-note">For one-off usage: <code>npx vx3 &lt;command&gt;</code></p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <div class="step-content">
+                        <h3>Create a new project</h3>
+                        <pre><code># Interactive prompt
+vx3 create
+
+# Or specify project name directly
+vx3 create my-app</code></pre>
+                        <p class="step-note">Copies template files including Solidity samples, config, and
+                            package.json.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <div class="step-content">
+                        <h3>Initialize RPC config</h3>
+                        <pre><code>vx3 rpc init</code></pre>
+                        <p class="step-note">Creates <code>vx.config.json</code> with your RPC endpoint settings.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <div class="step-content">
+                        <h3>Start the dev server</h3>
+                        <pre><code>vx3 serve --debug</code></pre>
+                        <p class="step-note">Launches a local server with a debug dashboard at <code>/debug</code>.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">5</span>
+                    <div class="step-content">
+                        <h3>(Optional) Setup Hardhat</h3>
+                        <pre><code>vx3 setup hardhat</code></pre>
+                        <p class="step-note">Scaffolds Hardhat config files for compiling and deploying contracts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prereq-box">
+                <h4>Prerequisites</h4>
+                <ul>
+                    <li>Node.js v18+ (required for built-in <code>fetch</code>)</li>
+                    <li>npm / pnpm / yarn</li>
+                    <li>MetaMask or other Web3 wallet</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-line">&copy; 2025 VX3 — Apache-2.0 License</p>
+            <p class="footer-line">Created by <a href="https://nknighta.me" target="_blank"
+                    rel="noopener noreferrer">nknighta</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

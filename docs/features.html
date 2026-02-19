@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Features — VX3 Docs</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="https://nknighta.me/assets/img/varius.ico" />
+</head>
+
+<body class="docs-body">
+    <div class="page-content">
+        <canvas id="bg3d" aria-hidden="true"></canvas>
+
+        <header class="top-bar">
+            <a href="/vx/" class="brand-link">VX3</a>
+            <nav class="header-nav">
+                <a href="features.html" class="active">Features</a>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="cli.html">CLI</a>
+                <a href="https://nknighta.me/vx/">SDK</a>
+                <a href="packages.html">Packages</a>
+                <a href="https://github.com/nk4dev/vx3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="section page-section">
+            <h1 class="page-title">Features</h1>
+            <p class="page-lead">Everything you need for Web3 development in one toolkit.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Multi-Chain Support</h3>
+                    <p>Connect to Ethereum mainnet, testnets, or local nodes via ethers.js v6. Configure RPC endpoints
+                        with <code>vx.config.json</code>.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Payment Module</h3>
+                    <p>Send ETH payments programmatically or via CLI. Simple API:
+                        <code>vx.payment.sendPayment()</code>. Supports custom RPC and amount in ETH.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>No SaaS Fee</h3>
+                    <p>No connection required to external APIs. Direct RPC access with zero middleware costs. You own
+                        your infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>CLI Toolkit</h3>
+                    <p>Create projects, check gas, manage RPC configs, deploy contracts — all from the
+                        <code>vx3</code> command line.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Project Templates</h3>
+                    <p>Scaffold new Web3 projects instantly with <code>vx3 create</code>. Includes Solidity samples,
+                        config files, and contract examples.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔨</div>
+                    <h3>Hardhat Integration</h3>
+                    <p>Built-in Hardhat setup with <code>vx3 setup hardhat</code>. Compile, test, and deploy smart
+                        contracts seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Debug Dashboard</h3>
+                    <p>Local dev server with TailwindCSS-powered debug UI. Shows block number, server host, and quick
+                        API links.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⛽</div>
+                    <h3>Gas Monitoring</h3>
+                    <p>Check gas fees in real-time with <code>vx3 gas</code>. Displays gasPrice, maxFeePerGas,
+                        and maxPriorityFeePerGas in gwei.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-line">&copy; 2025 VX3 — Apache-2.0 License</p>
+            <p class="footer-line">Created by <a href="https://nknighta.me" target="_blank"
+                    rel="noopener noreferrer">nknighta</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

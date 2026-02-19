@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Packages — VX3 Docs</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="https://nknighta.me/assets/img/varius.ico" />
+</head>
+
+<body class="docs-body">
+    <div class="page-content">
+        <canvas id="bg3d" aria-hidden="true"></canvas>
+
+        <header class="top-bar">
+            <a href="/vx/" class="brand-link">VX3</a>
+            <nav class="header-nav">
+                <a href="features.html">Features</a>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="cli.html">CLI</a>
+                <a href="https://nknighta.me/vx/">SDK</a>
+                <a href="packages.html" class="active">Packages</a>
+                <a href="https://github.com/nk4dev/vx3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="section page-section">
+            <h1 class="page-title">Packages</h1>
+            <p class="page-lead">VX3 is a turborepo monorepo containing multiple packages.</p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>@nk4dev/vx</h3>
+                    <p>The core SDK package. Includes the CLI tool (<code>vx3</code>), RPC helpers, payment module,
+                        gas utilities, contract tools, and the local dev server.</p>
+                    <span class="pkg-tag">v0.0.18</span>
+                    <div class="pkg-meta">
+                        <span>TypeScript</span>
+                        <span>ethers.js v6</span>
+                        <span>MIT</span>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <h3>packages/template</h3>
+                    <p>Project scaffolding template used by <code>vx3 create</code>. Contains Solidity samples
+                        (<code>sample.sol</code>, <code>contracts/Sample.sol</code>), JavaScript examples, and
+                        <code>vmx.config.json</code>.
+                    </p>
+                    <span class="pkg-tag">template</span>
+                </div>
+                <div class="package-card">
+                    <h3>packages/hardhat</h3>
+                    <p>Hardhat integration files scaffolded by <code>vx3 setup hardhat</code>. Provides config, compile
+                        scripts, test setup, and deployment scripts.</p>
+                    <span class="pkg-tag">tooling</span>
+                </div>
+                <div class="package-card">
+                    <h3>packages/system</h3>
+                    <p>System-level utilities and global configuration module used internally by the VX3 monorepo.</p>
+                    <span class="pkg-tag">internal</span>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h2>Monorepo Structure</h2>
+                <div class="code-block">
+                    <h3>Directory Layout</h3>
+                    <pre><code>vx3-master-repo/
+├── vx/                    # Core SDK (@nk4dev/vx)
+│   ├── src/
+│   │   ├── cli.ts         # CLI entry point
+│   │   ├── index.ts       # Library entry point
+│   │   ├── command/       # CLI commands (create, gas, pay, rpc, serve, setup)
+│   │   ├── core/          # RPC, contract, data helpers
+│   │   ├── payment/       # Payment module
+│   │   ├── server/        # Local dev server
+│   │   └── types/         # TypeScript types
+│   ├── packages/
+│   │   ├── template/      # Project template files
+│   │   └── hardhat/       # Hardhat setup files
+│   └── docs/              # SDK-specific docs
+├── packages/
+│   └── system/            # System utilities
+└── docs/                  # This documentation site</code></pre>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h2>Development Scripts</h2>
+                <div class="cli-table-wrap">
+                    <table class="cli-table">
+                        <thead>
+                            <tr>
+                                <th>Script</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>npm run dev</code></td>
+                                <td>Start all packages in dev mode (turbo)</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run build</code></td>
+                                <td>Build all packages</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run dev:sdk</code></td>
+                                <td>Dev mode for SDK only</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run dev:web</code></td>
+                                <td>Dev mode for web app</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run dev:server</code></td>
+                                <td>Dev mode for server</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run db:push</code></td>
+                                <td>Push database schema</td>
+                            </tr>
+                            <tr>
+                                <td><code>npm run db:studio</code></td>
+                                <td>Open database studio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-line">&copy; 2025 VX3 — Apache-2.0 License</p>
+            <p class="footer-line">Created by <a href="https://nknighta.me" target="_blank"
+                    rel="noopener noreferrer">nknighta</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
