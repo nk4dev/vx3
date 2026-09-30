@@ -1,47 +1,50 @@
 # VX SDK (vx3) - LLM Documentation Index
 
 This file is an index of documents under `docs/llm` intended to be easily referenced by LLMs and document search agents.
-Paths are relative to the `docs` directory.
+The documents describe the SDK on the `dev` branch of https://github.com/nk4dev/vx (npm package: `vx3`).
 
-- https://raw.githubusercontent.com/nk4dev/vx/refs/heads/dev/docs/llm/overview.md:
+- https://raw.githubusercontent.com/nk4dev/vx3/refs/heads/master/docs/llm/overview.md:
   - Project overview, purpose, and core features
-  - Developer information (Maintainer: @nk4dev)
-  - License (MIT)
+  - Developer information (Maintainer: @nk4dev) and related URLs
+  - License (SDK: MIT, parent monorepo: Apache-2.0)
   - Programming languages (TypeScript, JavaScript, Solidity)
-  - Feature summary (multi-chain support, wallet management, local development server, Hardhat integration, gas monitoring, RPC management)
+  - Feature summary (scaffolding, local API server, real-time dashboard, payments, NFT minting, gas, IPFS, VXC compiler, React hooks, RPC config)
+  - Bundled packages (`@vx3/vxc`, `@vx3/hardhat`, templates)
 
-- https://raw.githubusercontent.com/nk4dev/vx/refs/heads/dev/docs/llm/installation.md:
-  - Installation requirements (Node.js 18+, npm/pnpm/yarn; Bun optional)
-  - Global installation steps (`npm install -g @nk4dev/vx`)
-  - Local project installation (`npm install @nk4dev/vx`)
-  - Build-from-source steps (`git clone`, `npm install`, `npm run build`)
-  - One-off usage with `npx` and Bun build examples
+- https://raw.githubusercontent.com/nk4dev/vx3/refs/heads/master/docs/llm/installation.md:
+  - Requirements (Node.js 18+, Bun recommended)
+  - Global / local installation (`npm install -g vx3`, `npm install vx3`)
+  - One-off usage with `npx vx3` / `bunx vx3`
+  - Build from source (`git clone -b dev`, `bun i`, `bun run build`, `bun link`)
 
-- https://raw.githubusercontent.com/nk4dev/vx/refs/heads/dev/docs/llm/commands.md:
-  - CLI command list and descriptions
-  - Detailed usage (options and environment variables)
+- https://raw.githubusercontent.com/nk4dev/vx3/refs/heads/master/docs/llm/commands.md:
+  - Full CLI command list and flags
+  - `vx.config.json` format and the `PRIVATE_KEY` environment variable
   - Key commands:
-    - `vx3 create` (scaffold a new project)
-    - `vx3 rpc init` (initialize RPC configuration)
-    - `vx3 serve` (start the development server; `--debug` option)
-    - `vx3 gas` (retrieve gas information)
-    - `vx3 setup hardhat` (scaffold Hardhat files)
-    - `vx3 pay` (send payments/transactions)
-  - Examples (PowerShell / bash) and recommended best practices
+    - `vx3 init` / `vx3 create` (scaffold a project)
+    - `vx3 rpc init | list` (RPC configuration)
+    - `vx3 api` (local helper API server, port 8545; `--debug`) — replaces the old `vx3 serve` / `vx3 node`
+    - `vx3 dash` (real-time dashboard, port 4000)
+    - `vx3 gas`, `vx3 pay`, `vx3 nft mint`, `vx3 ipfs fetch`
+    - `vx3 setup hardhat | react`, `vx3 generate template/<react|vue>`
+    - `vx3 compile` (VXC Solidity compiler)
+  - Endpoint tables, security notes, and best practices
 
-- https://raw.githubusercontent.com/nk4dev/vx/refs/heads/dev/docs/llm/usage.md:
-  - How to integrate the SDK with code examples
-  - TypeScript / ESM and CommonJS import examples
-  - Payment module usage for sending transactions programmatically
-  - Component generation commands (React / Vue)
-  - React component examples and Next.js dynamic routing examples
-  - Hooks usage examples (`usePayment`, `usePaymentStatus`, `usePaymentDialog`)
+- https://raw.githubusercontent.com/nk4dev/vx3/refs/heads/master/docs/llm/usage.md:
+  - ESM and CommonJS import examples (`import vx from 'vx3'`)
+  - Config helpers (`vx3/core/config`, `VxConfigError`)
+  - `getGasFees` return shape
+  - Payment module (`payment.sendPayment`) and NFT minting (`mintNFT`)
+  - IPFS fetch
+  - React `<Payment />` (api / wallet modes) and hooks (`usePayment`, `usePaymentStatus`, `usePaymentDialog`)
+  - Template generation and the VXC programmatic API
 
 Search keywords (guidance for LLMs):
-- vx3, vx3 create, vx3 rpc init, vx3 serve --debug, vx3 pay, vx3 gas
-- Payment, ethers.js, Hardhat, Wallet, RPC configuration
-- TypeScript, JavaScript, Solidity, React, Vue
+- vx3, vx3 init, vx3 create, vx3 rpc init, vx3 api --debug, vx3 dash, vx3 pay, vx3 gas, vx3 nft mint, vx3 compile, VXC
+- Payment, NFT, ethers.js v6, Hardhat, Wallet, RPC configuration, vx.config.json, IPFS, SSE
+- TypeScript, JavaScript, Solidity, React, Vue, Bun
 
 Notes:
 - Refer to each entry and extract detailed content from the corresponding document sections.
 - When parsing, open `docs/llm/<file>.md` and prioritize sections such as "Overview", "Examples", and "CLI" for each file.
+- `vx3 serve` and `@nk4dev/vx` are obsolete names; use `vx3 api` and the `vx3` package.

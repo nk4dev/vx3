@@ -1,47 +1,63 @@
 # Installation Instructions
 
 ## Requirements
-- **Node.js:** 18+ (recommended; required for built-in `fetch` usage)
-- **Package Manager:** npm, pnpm, or yarn
-- **Bun (optional):** For running the project build
+- **Node.js:** 18+ (built-in `fetch` is used)
+- **Bun:** recommended — the SDK repo, its CI and its scripts use Bun
+  (`bun install`, `bun run build`). npm / pnpm / yarn also work for consumers.
+- A Web3 wallet (e.g. MetaMask) if you use the React `wallet` payment mode.
 
 ## Installation Methods
 
+The package on npm is **`vx3`**. It ships the `vx3` binary.
+
 ### As a Global CLI Tool
-Install globally for CLI access from anywhere:
 
 ```bash
-npm install -g @nk4dev/vx
+npm install -g vx3
 # or
-npm i -g @nk4dev/vx
+bun add -g vx3
 ```
 
 ### As a Local Dependency
-Install in your project:
 
 ```bash
-npm install @nk4dev/vx
+npm install vx3
+# or
+bun add vx3
 ```
 
 ### For One-off Usage
-Use `npx` to run commands without installing:
 
 ```bash
 npx vx3 <command>
+# or
+bunx vx3 <command>
 ```
 
-### From Source (Development)
-Clone and build locally:
+### From Source (latest, `dev` branch)
 
 ```bash
-git clone https://github.com/nk4dev/vx.git
+git clone -b dev https://github.com/nk4dev/vx
 cd vx
-npm install
-npm run build
+bun i
+bun run build   # prebuild also builds packages/vxc
+bun link        # exposes the `vx3` binary globally
 ```
 
-For Bun-based building:
+The published npm version can lag behind the `dev` branch. Build from source
+to get the newest CLI (for example the `api` command).
+
+## Verify
+
 ```bash
-bun install
-bun run build
+vx3 --version
+vx3 help
+```
+
+## Next Step
+
+```bash
+vx3 init my-app      # copy the default template into ./my-app
+cd my-app
+vx3 rpc init         # only needed if vx.config.json is missing
 ```
