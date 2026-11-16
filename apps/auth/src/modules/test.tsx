@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   type User,
 } from "firebase/auth";
-import { auth } from "../components/firebase";
+import { auth } from "../firebase";
 import { useSearchParams } from "react-router-dom";
 
 const Test = () => {

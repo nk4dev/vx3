@@ -5,3 +5,4 @@ node_modules
 vx.config.json
 
 dist/
+apps/server/prisma/generated/
