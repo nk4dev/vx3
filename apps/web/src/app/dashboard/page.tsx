@@ -1,10 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-<<<<<<< HEAD
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { trpcClient } from "@/utils/trpc";
 import { WalletConnect } from "@/components/wallet-connect";
-import { Web3Actions } from "@/components/web3-actions";
 import { useAccount, useBalance } from 'wagmi';
 
 interface Project {
@@ -23,15 +21,11 @@ interface Project {
 		infoId: string;
 	}[];
 }
-=======
->>>>>>> 3c6dead82d74b524af6f95d528cfa6f99bacf386
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-
-import { Wallet } from "@/components/ui/wallet";
 
 export default function Dashboard() {
 	const router = useRouter();
@@ -284,7 +278,6 @@ export default function Dashboard() {
 					</Card>
 				)}
 			</div>
-			<Wallet />
 		</div>
 	);
 }
